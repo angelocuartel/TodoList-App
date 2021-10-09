@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoList_App.Data.EntityConfigurations;
 using TodoList_App.Models;
 
 namespace TodoList_App.Data
@@ -18,9 +19,7 @@ namespace TodoList_App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-
-           // modelBuilder.ApplyConfiguration();
+            modelBuilder.ApplyConfiguration(new TodoEntityConfiguration());
         }
     }
 }
