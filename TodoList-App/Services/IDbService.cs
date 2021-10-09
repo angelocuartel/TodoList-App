@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TodoList_App.Services
 {
-    interface IDbService<T>
+    public interface IDbService<T>
     {
 
          Task InsertAsync(T obj);

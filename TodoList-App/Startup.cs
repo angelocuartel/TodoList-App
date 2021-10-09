@@ -41,7 +41,7 @@ namespace TodoList_App
 
             //lifetime services
 
-            services.AddSingleton<IDbService<Todo>, TodoService>();
+            services.AddScoped<IDbService<Todo>, TodoService>();
         }
 
        
