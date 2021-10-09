@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TodoList_App.Data;
+using TodoList_App.Models;
+using TodoList_App.Services;
 
 namespace TodoList_App
 {
@@ -36,7 +38,13 @@ namespace TodoList_App
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("TodoAppDbConnection")
                 ));
+
+            //lifetime services
+
+            services.AddSingleton<IDbService<Todo>, TodoService>();
         }
+
+       
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
