@@ -8,3 +8,10 @@
     background-position:center;
     background-size:cover;
 }
+
+
+.container {
+    border-radius: 10px;
+    background-color: white;
+    height:650px;
+}

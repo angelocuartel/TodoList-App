@@ -23,7 +23,14 @@ namespace TodoList_App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //runtime compilation in html and css
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
+
+
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
