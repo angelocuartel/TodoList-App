@@ -50,7 +50,7 @@ namespace TodoList_App
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=TodoApp}/{action=Index}/{id?}");
+                    pattern: "{controller=TodoApp}/{action=TodoMainView}/{id?}");
             });
         }
     }
