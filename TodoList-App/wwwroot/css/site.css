@@ -1,6 +1,10 @@
-﻿body{
-    padding:0px;
-    margin:0px;
-    box-sizing:border-box;
-    background-image:linear-gradient(150deg,purple,orange,blue);
+﻿body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background-image:linear-gradient(to bottom right,blue,purple,red);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
 }
