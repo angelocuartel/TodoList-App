@@ -8,14 +8,14 @@ namespace TodoList_App.Services
     interface IDbService<T>
     {
 
-        void CreateAsync();
+         Task InsertAsync(T obj);
 
-        T GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id);
 
-        IEnumerable<T> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAsync();
 
-        void DeleteAsync();
+        Task DeleteAsync(int id);
 
-        void UpdateAsync();
+        Task UpdateAsync(int id);
     }
 }
