@@ -3,12 +3,12 @@
     <div class="col-sm-12 container w-50 ">
          <div class="row">
              <div class="col-md-12">
-                 <p class="display-6 text-center">TodoList App</p>
+                 <p class="display-6 text-center">Todo-List App</p>
              </div>
          </div>
         <div class="row mt-5">
             <div class="col-md-12">
-                <button class="btn btn-outline-primary"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
+                <button class="btn btn-outline-primary" data-url="@Url.Action("OpenModal")" data-toggle="ajax-modal" data-target="#modal-add"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
                 <button class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
             </div>
         </div>
@@ -17,7 +17,7 @@
                <table class="table table-hover ">
                    <thead >
                        <tr class="text-center">
-                           <th>Todo</th>
+                           <th>To-do</th>
                            <th>Actions</th>
                        </tr>
                    </thead>
@@ -46,5 +46,7 @@
         
     </div>
 </div>
+
+<div id="modal-placeholder"></div>
 
 

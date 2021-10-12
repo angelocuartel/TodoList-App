@@ -1,0 +1,30 @@
+﻿@model TodoList_App.Models.Todo
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="addContactLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addContactLabel">Add To-do</h5>
+                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="todo" class="form-label">What will you do</label>
+                   <textarea asp-for="@Model.TodoTask" type="text" class="form-control" id="todo"></textarea>
+                    <span class="text-danger" asp-validation-for="TodoTask"></span>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{ 
+<partial name="__ValidationScriptsPartial.cshtml" />
+}

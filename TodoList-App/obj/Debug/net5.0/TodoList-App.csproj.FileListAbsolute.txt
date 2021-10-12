@@ -429,3 +429,4 @@ C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\runtimes\w
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\Razor\Views\TodoApp\_modalPopPartial.cshtml.g.cs

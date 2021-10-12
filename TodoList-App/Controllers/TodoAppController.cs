@@ -16,10 +16,22 @@ namespace TodoList_App.Controllers
         {
             _todoService = todoService;
         }
-
+        
+        
+        [HttpGet]
         public async Task<IActionResult> TodoMainView()
         {
             return  View( await _todoService.GetAllAsync());
         }
+
+
+        [HttpGet]
+        public IActionResult OpenModal()
+        {
+            return PartialView("_modalPopPartial", new Todo());
+        }
+
+
+
     }
 }
