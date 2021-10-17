@@ -26,10 +26,18 @@ namespace TodoList_App.Controllers
 
 
         [HttpGet]
-        public IActionResult OpenModal()
+        public async Task<IActionResult> GetTodo(int id)
         {
-            return PartialView("_modalPopPartial", new Todo());
+            return PartialView("_modalPopPartial",await _todoService.GetByIdAsync(id));
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
 
 
 

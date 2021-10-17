@@ -9,12 +9,16 @@ $(function () {
     var PlaceholderElement = $('#modal-placeholder');
     $('button[data-toggle="ajax-modal"]').click(function (event) {
 
+      //
+  
+            $.get($(this).data('url')).done(function (data) {
+                PlaceholderElement.html(data);
+                PlaceholderElement.find('.modal').modal('show');
+            });
+
         
-        var url = $(this).data('url');
-        $.get(url).done(function (data) {
-            PlaceholderElement.html(data);
-            PlaceholderElement.find('.modal').modal('show');
-        });
+       
+     
 
     });
 

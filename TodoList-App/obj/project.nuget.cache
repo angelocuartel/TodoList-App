@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "hypVhZv7IKp9UGbe7/JTYzdhZsS6+jxzxNlftN2/q8spTC2vaAEaZTLp0Hu+Jh9im/KljuRtjbwUQNj1kOqN5g==",
+  "dgSpecHash": "5A2uGR1s4enSTEWU/6+eY2gnCM1rVQdUrHvv/epwNpGVK/o6d8SBVSCAlqBUkGGxWXYTb2zUEhkTWx80OJXhDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Boss\\source\\repos\\TodoList-App\\TodoList-App\\TodoList-App.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Boss\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
+    "C:\\Users\\Boss\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "C:\\Users\\Boss\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.3\\fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "C:\\Users\\Boss\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Boss\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Boss\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.8\\microsoft.aspnetcore.mvc.razor.extensions.5.0.8.nupkg.sha512",
