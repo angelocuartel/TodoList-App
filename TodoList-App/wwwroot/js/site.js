@@ -5,12 +5,12 @@
 
 
 
-function showModal(urlPath, modalHolder) {
+function showModal(urlPath, modalHolder,title) {
 
     $.get(urlPath, data => {
 
         $(modalHolder).html(data);
-        $(modalHolder).find('.modal').modal('show');
+        $(modalHolder).find('.modal').modal('show').find('.modal-title').html(title);
         $.validator.unobtrusive.parse('form');
     })
 
@@ -18,7 +18,7 @@ function showModal(urlPath, modalHolder) {
 
 
 function submitForm() {
-    alert('valid');
+
     if ($('form').valid()) {
         alert('valid');
     }
