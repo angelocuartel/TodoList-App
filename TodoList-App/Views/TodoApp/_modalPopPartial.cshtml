@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="post">
                     <label for="todo" class="form-label">What will you do</label>
                    <textarea asp-for="@Model.TodoTask" type="text" class="form-control" id="todo"></textarea>
                     <span class="text-danger" asp-validation-for="TodoTask"></span>
@@ -19,7 +19,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary" onclick="submitForm()">Save</button>
             </div>
         </div>
     </div>
