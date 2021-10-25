@@ -4,5 +4,9 @@
 
 <script type="text/javascript">
     // override unobtrusive validation 
-    $.validator.unobtrosive.options = { validClass: 'is-valid', errorClass='is-invalid' };
+    var settings = {
+        validClass: 'is-valid',
+        errorClass: 'is-invalid'
+    };
+    $.validator.unobtrusive.options = settings;
 </script>
