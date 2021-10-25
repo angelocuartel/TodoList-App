@@ -38,6 +38,11 @@ namespace TodoList_App.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult GetModalView()
+        {
+            return PartialView("_modalPopPartial");
+        }
 
 
 
