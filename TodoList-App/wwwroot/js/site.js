@@ -11,7 +11,7 @@ function showModal(urlPath, modalHolder) {
 
         $(modalHolder).html(data);
         $(modalHolder).find('.modal').modal('show');
-        $.validator.unobtrusive.parse($('form'));
+        $.validator.unobtrusive.parse('form');
     })
 
 };

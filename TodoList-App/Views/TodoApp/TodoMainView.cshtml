@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Todo> 
+﻿@model IEnumerable<Todo>
 <div class="row mt-5">
     <div class="col-sm-12 container w-50 ">
-         <div class="row">
-             <div class="col-md-12">
-                 <p class="display-6 text-center">Todo-List App</p>
-             </div>
-         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="display-6 text-center">Todo-List App</p>
+            </div>
+        </div>
         <div class="row mt-5">
             <div class="col-md-12">
                 <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder')"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
@@ -13,40 +13,43 @@
             </div>
         </div>
         <div class="row mt-5">
-           <div class="table-responsive-sm">
-               <table class="table table-hover ">
-                   <thead >
-                       <tr class="text-center">
-                           <th>To-do</th>
-                           <th>Actions</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                      @if(Model.Count() == 0)
+            <div class="table-responsive-sm">
+                <table class="table table-hover ">
+                    <thead>
+                        <tr class="text-center">
+                            <th>To-do</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Count() == 0)
                         {
-                          <p class="text-primary h6">You have no Todo in list</p>
+                            <p class="text-primary h6">You have no Todo in list</p>
                         }
                         else
                         {
-                          @foreach(var todo in Model)
+                            @foreach (var todo in Model)
                             {
-                              <tr>
-                                  <td>@todo.TodoTask</td>
-                                  <td>
-                                      <button class="btn btn-warning" data-url="@Url.Action("GetTodo")" data-toggle="ajax-model" data-target="#modalpop"><i class="fas fa-pen"></i></button>
-                                      <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                  </td>
-                              </tr>
+                                <tr>
+                                    <td>@todo.TodoTask</td>
+                                    <td>
+                                        <button class="btn btn-warning" data-url="@Url.Action("GetTodo")" data-toggle="ajax-model" data-target="#modalpop"><i class="fas fa-pen"></i></button>
+                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
                             }
                         }
-                   </tbody>
-               </table>
-           </div>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
+
     </div>
 </div>
 
 <div id="modal-placeholder"></div>
 
 
+@section scripts{
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}
