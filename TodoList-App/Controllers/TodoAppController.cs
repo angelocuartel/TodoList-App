@@ -39,9 +39,8 @@ namespace TodoList_App.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetModalView(string title)
+        public IActionResult GetModalView()
         {
-            ViewBag.titleModal = title;
             return PartialView("_modalPopPartial");
         }
 
