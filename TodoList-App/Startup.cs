@@ -1,17 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TodoList_App.Data;
 using TodoList_App.Models;
 using TodoList_App.Services;
+using FluentValidation.AspNetCore;
 
 namespace TodoList_App
 {
@@ -33,7 +29,13 @@ namespace TodoList_App
                 .AddRazorRuntimeCompilation();
 
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                    .AddFluentValidation(fv =>
+                    {
+                        fv.DisableDataAnnotationsValidation = true;
+                        fv.RegisterValidatorsFromAssemblyContaining<Startup>();
+                    
+                    });
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("TodoAppDbConnection")
