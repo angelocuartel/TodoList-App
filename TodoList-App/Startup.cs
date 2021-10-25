@@ -8,6 +8,8 @@ using TodoList_App.Data;
 using TodoList_App.Models;
 using TodoList_App.Services;
 using FluentValidation.AspNetCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace TodoList_App
 {
@@ -34,8 +36,9 @@ namespace TodoList_App
                     {
                         fv.DisableDataAnnotationsValidation = true;
                         fv.RegisterValidatorsFromAssemblyContaining<Startup>();
-                    
-                    });
+
+                    })
+                    .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("TodoAppDbConnection")
