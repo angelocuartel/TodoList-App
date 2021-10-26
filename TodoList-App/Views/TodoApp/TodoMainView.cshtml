@@ -1,27 +1,29 @@
 ﻿@model IEnumerable<Todo>
 <div class="row mt-5">
-    <div class="col-sm-12 container w-50 ">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="display-6 text-center">Todo-List App</p>
+    <div class="col-sm-12 container w-50 overflow-auto">
+        <nav class="sticky-md-top">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="display-6 text-center">Todo-List App</p>
+                </div>
             </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder','Add-todo')"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
-                <button class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder','Add-todo')"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
+                    <button class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
+                </div>
             </div>
-        </div>
-        <div class="row mt-5">
+        </nav>
+        <div class="row mt-5 ">
             <div class="table-responsive-sm">
-                <table class="table table-hover ">
+                <table class="table table-hover">
                     <thead>
                         <tr class="text-center">
                             <th>To-do</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         @if (Model.Count() == 0)
                         {
                             <p class="text-primary h6">You have no Todo in list</p>
@@ -40,8 +42,8 @@
                             }
                         }
                     </tbody>
-                </table>
-            </div>
+            </table>
+        </div>
         </div>
 
     </div>

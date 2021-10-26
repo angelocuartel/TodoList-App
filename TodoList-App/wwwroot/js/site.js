@@ -23,3 +23,21 @@ function submitForm() {
         alert('valid');
     }
 }
+
+
+function InsertData(urlPath) {
+
+    if ($('form').valid()) {
+
+        $.ajax({
+            url: urlPath,
+            type:'POST',
+            data: $('form').serialize(),
+            success: data => {
+
+                alert('success');
+            }
+        });
+    }
+
+}

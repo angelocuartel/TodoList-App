@@ -45,6 +45,25 @@ namespace TodoList_App.Controllers
         }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> InsertTodo(Todo todo)
+        {
+            if (ModelState.IsValid)
+            {
+                await _todoService.InsertAsync(todo);
+                var lists = await _todoService.GetAllAsync();
+
+                return Json(lists);
+            }
+
+            else
+            {
+                return PartialView("_modalPopPartial", todo);
+            }
+        }
+
+
 
     }
 }
