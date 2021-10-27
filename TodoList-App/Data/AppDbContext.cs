@@ -17,6 +17,11 @@ namespace TodoList_App.Data
 
         }
 
+        public AppDbContext()
+        {
+
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TodoEntityConfiguration());

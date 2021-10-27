@@ -18,47 +18,49 @@ namespace TodoList_App.Services
 
         public async Task DeleteAsync(int id)
         {
-            using (_dbContext)
-            {
+            
                 _dbContext.Remove(await _dbContext.Todos.FindAsync(id));
                 await _dbContext.SaveChangesAsync();
-            }
+            
         }
 
         public async Task<IEnumerable<Todo>> GetAllAsync()
         {
-            using (_dbContext)
-            {
+            
                 return await _dbContext.Todos.ToListAsync();
-            }
         }
 
         public async Task<Todo> GetByIdAsync(int id)
         {
-            using (_dbContext)
-            {
+          
                 return await _dbContext.Todos.FindAsync(id);
-            }
+            
+        }
+
+        public void Insert(Todo obj)
+        {
+            
+                _dbContext.Todos.Add(obj);
+                 _dbContext.SaveChanges();
+            
         }
 
         public async Task InsertAsync(Todo obj)
         {
-            using (_dbContext)
-            {
+            
                await _dbContext.AddAsync(obj);
                await _dbContext.SaveChangesAsync();
-            }
+            
 
            
         }
 
         public async Task UpdateAsync(int id)
         {
-            using (_dbContext)
-            {
+           
                 _dbContext.Update(await _dbContext.Todos.FindAsync(id));
                 await _dbContext.SaveChangesAsync();
-            }
+            
         }
 
          

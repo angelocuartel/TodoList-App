@@ -1,10 +1,6 @@
 ﻿
 
 
-
-
-
-
 function showModal(urlPath, modalHolder,title) {
 
     $.get(urlPath, data => {
@@ -14,15 +10,8 @@ function showModal(urlPath, modalHolder,title) {
         $.validator.unobtrusive.parse('form');
     })
 
-};
-
-
-function submitForm() {
-
-    if ($('form').valid()) {
-        alert('valid');
-    }
 }
+
 
 
 function InsertData(urlPath) {
@@ -33,11 +22,19 @@ function InsertData(urlPath) {
             url: urlPath,
             type:'POST',
             data: $('form').serialize(),
-            success: data => {
+            success: returnedJson => {
 
-                alert('success');
+                $('.modal').modal('hide');
+                populateTable('table', returnedJson);
+
             }
         });
     }
 
 }
+
+
+
+
+
+

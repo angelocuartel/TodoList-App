@@ -51,15 +51,15 @@ namespace TodoList_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _todoService.InsertAsync(todo);
-                var lists = await _todoService.GetAllAsync();
 
-                return Json(lists);
+               await _todoService.InsertAsync(todo);
+
+                return Json(await _todoService.GetAllAsync());
             }
 
             else
             {
-                return PartialView("_modalPopPartial", todo);
+                return Json("test");
             }
         }
 
