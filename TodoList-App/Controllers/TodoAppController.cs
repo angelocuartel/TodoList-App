@@ -45,6 +45,13 @@ namespace TodoList_App.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetModalViewUpdate(Todo todo)
+        {
+            return PartialView("_modalPopPartial",todo);
+        }
+
+
+        [HttpGet]
         public IActionResult GetDeleteModalView(Todo todo)
         {
             return PartialView("_ModalDeletePartial",todo);
@@ -91,6 +98,15 @@ namespace TodoList_App.Controllers
         {
              await _todoService.DeleteAllAsync(await _todoService.GetAllAsync());
 
+            return RedirectToAction("GetListTable");
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateTodo(Todo todo)
+        {
+            await _todoService.UpdateAsync(todo);
             return RedirectToAction("GetListTable");
         }
 

@@ -438,3 +438,4 @@ C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\Newtonsoft
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\Razor\Views\TodoApp\_TablePartial.cshtml.g.cs
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\Razor\Views\TodoApp\_ToastPartial.cshtml.g.cs
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\Razor\Views\TodoApp\_ModalDeletePartial.cshtml.g.cs
+C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\TodoList-App.csproj.AssemblyReference.cache

@@ -18,7 +18,7 @@ namespace TodoList_App.Services
 
         Task DeleteAllAsync(IEnumerable<T> list);
 
-        Task UpdateAsync(int id);
+        Task UpdateAsync(T obj);
 
         void Insert(T obj);
     }

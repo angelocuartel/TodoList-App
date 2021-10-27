@@ -20,7 +20,7 @@
                     <tr>
                         <td>@todo.TodoTask</td>
                         <td>
-                            <button class="btn btn-warning" data-url="@Url.Action("GetTodo")" data-toggle="ajax-model" data-target="#modalpop"><i class="fas fa-pen"></i></button>
+                            <button class="btn btn-warning" onclick="showModal('@Url.Action("GetModalViewUpdate")','#modal-placeholder','Add-todo',@JsonConvert.SerializeObject(todo))"><i class="fas fa-pen"></i></button>
                             <button class="btn btn-danger" onclick="showModal('@Url.Action("GetDeleteModalView")','#modal-placeholder','Delete Todo',@JsonConvert.SerializeObject(todo))"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>

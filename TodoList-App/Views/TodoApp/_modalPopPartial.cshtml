@@ -1,5 +1,8 @@
 ﻿@model TodoList_App.Models.Todo
 
+@{ 
+    var urlPath = string.Empty;
+}
 <div asp-validation-summary="ModelOnly"></div>
 
 <div class="modal fade" id="modalpop" tabindex="-1" role="dialog" aria-labelledby="addContactLabel" aria-hidden="true">
@@ -12,6 +15,15 @@
             </div>
             <div class="modal-body">
                 <form method="post">
+                    @if(Model != null)
+                   {
+                <input hidden type="text" asp-for="TodoId" />
+                urlPath = Url.Action("UpdateTodo");
+                    }
+                    else
+                    {
+                        urlPath = Url.Action("InsertTodo");
+                    }
                     <label for="todo" class="form-label">What will you do</label>
                    <textarea asp-for="@Model.TodoTask" type="text" class="form-control" id="todo"></textarea>
                     <span class="text-danger" asp-validation-for="TodoTask"></span>
@@ -19,7 +31,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="InsertData('/TodoApp/InsertTodo')">Save</button>
+                <button type="button" class="btn btn-primary" onclick="InsertData('@urlPath')">Save</button>
             </div>
         </div>
     </div>

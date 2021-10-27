@@ -64,10 +64,10 @@ namespace TodoList_App.Services
            
         }
 
-        public async Task UpdateAsync(int id)
+        public async Task UpdateAsync(Todo obj)
         {
            
-                _dbContext.Update(await _dbContext.Todos.FindAsync(id));
+                _dbContext.Update(obj);
                 await _dbContext.SaveChangesAsync();
             
         }
