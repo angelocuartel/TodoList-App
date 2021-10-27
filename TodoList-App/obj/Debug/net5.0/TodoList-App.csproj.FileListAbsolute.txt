@@ -436,3 +436,4 @@ C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\FluentVali
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Boss\source\repos\TodoList-App\TodoList-App\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Boss\source\repos\TodoList-App\TodoList-App\obj\Debug\net5.0\Razor\Views\TodoApp\_TablePartial.cshtml.g.cs

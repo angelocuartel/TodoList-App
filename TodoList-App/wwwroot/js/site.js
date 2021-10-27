@@ -25,13 +25,16 @@ function InsertData(urlPath) {
             success: returnedJson => {
 
                 $('.modal').modal('hide');
-                populateTable('table', returnedJson);
+
+                const table = $('#table-holder').html('');
+                table.html(returnedJson);
 
             }
         });
     }
 
 }
+
 
 
 

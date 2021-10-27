@@ -21,7 +21,7 @@ namespace TodoList_App.Controllers
         [HttpGet]
         public async Task<IActionResult> TodoMainView()
         {
-            return  View( await _todoService.GetAllAsync());
+            return  View(await _todoService.GetAllAsync());
         }
 
 
@@ -44,6 +44,11 @@ namespace TodoList_App.Controllers
             return PartialView("_modalPopPartial");
         }
 
+        public async Task<IActionResult> GetTable()
+        {
+            return PartialView("_TablePartial", await _todoService.GetAllAsync());
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -54,7 +59,7 @@ namespace TodoList_App.Controllers
 
                await _todoService.InsertAsync(todo);
 
-                return Json(await _todoService.GetAllAsync());
+                return PartialView("_TablePartial", await _todoService.GetAllAsync());
             }
 
             else
