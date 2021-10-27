@@ -74,6 +74,18 @@ function deleteItem(urlPath) {
 }
 
 
+function deleteAllITem(urlPath) {
+    $.ajax({
+        url: urlPath,
+        type: 'POST',
+        success: partialView => {
+            $('.modal').modal('hide');
+            loadTable(partialView, '#table-holder');
+            $('.toast-container').append($('.toast').toast('show'));
+        }
+    });
+}
+
 
 
 

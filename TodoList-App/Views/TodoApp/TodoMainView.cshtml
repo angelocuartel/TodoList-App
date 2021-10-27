@@ -11,7 +11,7 @@
             <div class="row mt-5">
                 <div class="col-md-12">
                     <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder','Add-todo',null)"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
-                    <button class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
+                    <button onclick="deleteAllITem('@Url.Action("DeleteAllTodo")')" class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
                 </div>
             </div>
         </nav>

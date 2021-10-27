@@ -16,6 +16,15 @@ namespace TodoList_App.Services
             _dbContext = dbcontext;
         }
 
+        public   Task DeleteAllAsync( IEnumerable<Todo> list)
+        {
+           return Task.Run(() => 
+                {
+                    _dbContext.RemoveRange(list);
+                     _dbContext.SaveChanges();
+               });
+        }
+
         public async Task DeleteAsync(int id)
         {
             

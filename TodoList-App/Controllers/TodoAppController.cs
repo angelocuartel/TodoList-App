@@ -75,10 +75,21 @@ namespace TodoList_App.Controllers
         }
 
         [HttpPost]
+
         public async Task<IActionResult> DeleteTodo(int id)
         {
    
             await _todoService.DeleteAsync(id);
+
+            return RedirectToAction("GetListTable");
+        }
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> DeleteAllTodo()
+        {
+             await _todoService.DeleteAllAsync(await _todoService.GetAllAsync());
 
             return RedirectToAction("GetListTable");
         }
