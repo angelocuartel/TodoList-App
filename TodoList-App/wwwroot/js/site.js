@@ -26,9 +26,14 @@ function InsertData(urlPath) {
 
                 $('.modal').modal('hide');
 
+                
                 const table = $('#table-holder').html('');
                 table.html(returnedJson);
-                $('.toast').toast('show');
+
+                
+                $('.toast-container').append($('.toast').show());
+               
+
             }
         });
     }
