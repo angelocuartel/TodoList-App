@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<TodoList_App.Models.Todo>
-
+@using Newtonsoft.Json
 <div class="table-responsive-sm">
     <table class="table table-hover">
         <thead>
@@ -21,7 +21,7 @@
                         <td>@todo.TodoTask</td>
                         <td>
                             <button class="btn btn-warning" data-url="@Url.Action("GetTodo")" data-toggle="ajax-model" data-target="#modalpop"><i class="fas fa-pen"></i></button>
-                            <button class="btn btn-danger" data-url="@Url.Action()"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-danger" onclick="showModal('@Url.Action("GetDeleteModalView")','#modal-placeholder','Delete Todo',@JsonConvert.SerializeObject(todo))"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                 }

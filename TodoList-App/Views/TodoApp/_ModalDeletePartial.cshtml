@@ -1,0 +1,19 @@
+﻿@model TodoList_App.Models.Todo
+@using Newtonsoft.Json
+<div class="modal fade" tabindex="-1" id="modal-delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn-close float-end"></button>
+                <div class="modal-title"></div>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="model-id" hidden  asp-for="TodoId" />
+                <p class="text-muted"> Do you want to delete this Todo @Model.TodoTask ?</p>
+            </div>
+            <div class="modal-footer">
+              <span><button onclick="deleteItem('@Url.Action("DeleteTodo")')" class="btn btn-danger my-1">Delete</button><button class="btn btn-outline-secondary my-1" data-bs-dismiss="modal">Cancel</button></span>   
+            </div>
+        </div>
+    </div>
+</div>

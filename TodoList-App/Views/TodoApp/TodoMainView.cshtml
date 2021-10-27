@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Todo>
+@using Newtonsoft.Json
 <div class="row mt-5">
     <div class="col-sm-12 container w-50 overflow-auto">
         <nav class="sticky-md-top">
@@ -9,42 +10,14 @@
             </div>
             <div class="row mt-5">
                 <div class="col-md-12">
-                    <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder','Add-todo')"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
+                    <button class="btn btn-outline-primary" onclick="showModal('/TodoApp/GetModalView','#modal-placeholder','Add-todo',null)"><i class="fa fa-plus fa-xs"></i> Add Todo</button>
                     <button class="btn btn-outline-danger"><i class="fa fa-trash fa-xs"></i> Remove All</button>
                 </div>
             </div>
         </nav>
         <div class="row mt-5" id="table-holder">
-
-            <div class="table-responsive-sm">
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="text-center">
-                            <th>To-do</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                        @if (Model.Count() == 0)
-                        {
-                            <p class="text-primary h6">You have no Todo in list</p>
-                        }
-                        else
-                        {
-                            @foreach (var todo in Model)
-                            {
-                                <tr>
-                                    <td>@todo.TodoTask</td>
-                                    <td>
-                                        <button class="btn btn-warning" data-url="@Url.Action("GetTodo")" data-toggle="ajax-model" data-target="#modalpop"><i class="fas fa-pen"></i></button>
-                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            }
-                        }
-                    </tbody>
-            </table>
-        </div>
+            <partial name="_TablePartial" model="@Model" />
+            
         </div>
 
     </div>

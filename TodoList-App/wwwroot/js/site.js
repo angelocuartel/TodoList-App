@@ -1,17 +1,21 @@
 ﻿
 
 
-function showModal(urlPath, modalHolder,title) {
+function showModal(urlPath, modalHolder,title,dataObject) {
+   
+    $.ajax({
+        url: urlPath,
+        type: 'GET',
+        data: dataObject,
+        success: partialView => {
+            $(modalHolder).html('').html(partialView);
+            $(modalHolder).find('.modal').modal('show').find('.modal-title').html(title);
+            $.validator.unobtrusive.parse('form');
+        }
+    });
 
-    $.get(urlPath, data => {
-
-        $(modalHolder).html(data);
-        $(modalHolder).find('.modal').modal('show').find('.modal-title').html(title);
-        $.validator.unobtrusive.parse('form');
-    })
 
 }
-
 
 
 function InsertData(urlPath) {
@@ -28,12 +32,12 @@ function InsertData(urlPath) {
                 $('.modal').modal('hide');
 
 
-                if (!returnedJson.includes('modal')) {
+                if (!returnedJson.includes(`<div class ="modal fade"`)) {
 
-                    const table = $('#table-holder').html('');
-                    table.html(returnedJson);
+                   
+                    loadTable(returnedJson, '#table-holder');
 
-                    $('.toast-container').append($('.toast').show());
+                    $('.toast-container').append($('.toast').toast('show'));
 
                 }
 
@@ -47,6 +51,29 @@ function InsertData(urlPath) {
     
 
 }
+
+function loadTable(data,tableId) {
+    $(tableId).html('').html(data);
+}
+
+
+function deleteItem(urlPath) {
+    var value = $('#model-id').val();
+    $.ajax({
+        url: urlPath,
+        type: 'POST',
+        datatype:'json',
+        data: { id: value},
+        success: returnedJson => {
+
+            $('.modal').modal('hide');
+            loadTable(returnedJson, '#table-holder');
+            $('.toast-container').append($('.toast').toast('show'));
+        }
+    });
+}
+
+
 
 
 
