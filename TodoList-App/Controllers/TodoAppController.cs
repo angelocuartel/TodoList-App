@@ -44,10 +44,6 @@ namespace TodoList_App.Controllers
             return PartialView("_modalPopPartial");
         }
 
-        public async Task<IActionResult> GetTable()
-        {
-            return PartialView("_TablePartial", await _todoService.GetAllAsync());
-        }
 
 
         [HttpPost]
@@ -64,7 +60,7 @@ namespace TodoList_App.Controllers
 
             else
             {
-                return Json("test");
+                return PartialView("_modalPopPartial", todo);
             }
         }
 
